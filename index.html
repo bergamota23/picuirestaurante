@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picuí Praia Bar e Restaurante | Tradição e Sabor em João Pessoa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #D4531C;
+            --primary-dark: #A63D14;
+            --secondary: #F4D03F;
+            --ocean: #1B5E7E;
+            --sand: #F5E6D3;
+            --earth: #4A3428;
+            --cream: #FFF8F0;
+            --dark: #1A1A1A;
+        }
+
+        /* Image optimization */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Header & Hero Section */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0 var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: url('https://media.discordapp.net/attachments/1450294696688488478/1470241376561135616/logo.avif?ex=698a947b&is=698942fb&hm=8ff0ea0acf7c8ea6297a7c22b132fae95b5e874fe28ae5830a458b5f74bdec00&=&format=webp&quality=lossless&width=752&height=752') center/cover no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(240, 177, 40, 0.851) 0%, rgba(166, 61, 20, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255,255,255,0.03) 2px,
+                    rgba(255,255,255,0.03) 4px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255,255,255,0.03) 2px,
+                    rgba(255,255,255,0.03) 4px
+                );
+            animation: grain 8s steps(10) infinite;
+            z-index: 1;
+        }
+
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -5%); }
+            20% { transform: translate(-10%, 5%); }
+            30% { transform: translate(5%, -10%); }
+            40% { transform: translate(-5%, 15%); }
+            50% { transform: translate(-10%, 5%); }
+            60% { transform: translate(15%, 0); }
+            70% { transform: translate(0, 10%); }
+            80% { transform: translate(-15%, 0); }
+            90% { transform: translate(10%, 5%); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--cream);
+            position: relative;
+            z-index: 10;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            line-height: 1.1;
+            text-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 4px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1.2rem 3rem;
+            background: var(--secondary);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            transition: left 0.3s ease;
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            color: var(--cream);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(244, 208, 63, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(244, 208, 63, 0);
+            }
+        }
+
+        .cta-button {
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            animation: none;
+        }
+
+        /* Feature Banner */
+        .feature-banner {
+            position: relative;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .feature-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(212, 83, 28, 0.8);
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .banner-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .banner-content p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            background: linear-gradient(135deg, var(--cream) 0%, white 100%);
+            padding: 6rem 2rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(212, 83, 28, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: var(--earth);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            color: var(--earth);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 4px;
+            background: var(--primary);
+            margin: 1.5rem auto 0;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--earth);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            position: relative;
+            height: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            z-index: 1;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            z-index: 2;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .about-badge h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-badge p {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-highlight {
+            background: var(--sand);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 5px solid var(--primary);
+        }
+
+        .about-highlight h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--earth);
+        }
+
+        /* Menu Section */
+        .menu {
+            background: linear-gradient(135deg, var(--sand) 0%, var(--cream) 100%);
+        }
+
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 1rem 2rem;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 83, 28, 0.3);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .menu-item-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .menu-item-image img {
+            transform: scale(1.1);
+        }
+
+        .menu-item-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+        }
+
+        .menu-item-content {
+            padding: 2rem;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: left 0.3s ease;
+            z-index: 1;
+        }
+
+        .menu-item:hover::before {
+            left: 0;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(212, 83, 28, 0.2);
+        }
+
+        .menu-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .menu-item p {
+            color: var(--earth);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .menu-price {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--ocean);
+            margin-top: 1rem;
+            display: block;
+        }
+
+        .menu-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--secondary);
+            color: var(--dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+            border-radius: 20px;
+        }
+
+        /* Location Section */
+        .location {
+            background: var(--cream);
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .location-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .info-item p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--earth);
+        }
+
+        .map-container {
+            background: var(--sand);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .map-placeholder h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: linear-gradient(135deg, var(--ocean) 0%, var(--primary-dark) 100%);
+            color: var(--cream);
+        }
+
+        .gallery .section-title {
+            color: var(--cream);
+        }
+
+        .gallery .section-title::after {
+            background: var(--secondary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 83, 28, 0.5), rgba(27, 94, 126, 0.5));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.2);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background: linear-gradient(45deg, var(--primary), var(--ocean));
+            color: var(--cream);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 3;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--ocean);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 83, 28, 0.3);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--earth);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--sand);
+            background: var(--cream);
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 83, 28, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--cream);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--secondary);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 0 var(--primary);
+        }
+
+        .footer-text {
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .about-content,
+            .location-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark);
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .menu-item {
+            animation: slideInFromLeft 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <div class="logo">PICUÍ PRAIA</div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#localizacao">Localização</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>PICUÍ PRAIA</h1>
+            <p class="subtitle">Bar e Restaurante</p>
+            <p class="tagline">+30 Anos de Tradição e Sabor</p>
+            <a href="#cardapio" class="cta-button">
+                <span>CONHEÇA NOSSO CARDÁPIO</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Feature Banner -->
+    <div class="feature-banner">
+        <div class="banner-content">
+            <h2>Especialidade da Casa</h2>
+            <p>A Melhor Carne de Sol de João Pessoa</p>
+        </div>
+    </div>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <h2 class="section-title">Por Que Escolher o Picuí Praia?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span class="benefit-icon">🏆</span>
+                <h3>Qualidade Premium</h3>
+                <p>Ingredientes frescos e selecionados diariamente para garantir o melhor sabor em cada prato.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">👨‍🍳</span>
+                <h3>Tradição Familiar</h3>
+                <p>Mais de 30 anos preservando receitas autênticas e o verdadeiro sabor nordestino.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">❤️</span>
+                <h3>Atendimento Caloroso</h3>
+                <p>Equipe atenciosa que trata cada cliente como parte da família Picuí.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🎯</span>
+                <h3>Localização Privilegiada</h3>
+                <p>No coração de Manaíra, com estacionamento próprio e fácil acesso.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🍖</span>
+                <h3>Especialistas em Carne de Sol</h3>
+                <p>Reconhecidos como #1 em carne de sol na cidade, com técnica tradicional aperfeiçoada.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">👨‍👩‍👧‍👦</span>
+                <h3>Ambiente Familiar</h3>
+                <p>Espaço kids, área climatizada e ao ar livre para toda a família aproveitar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre">
+        <h2 class="section-title">Nossa História</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Desde 1994, o <strong>Picuí Praia Bar e Restaurante</strong> é referência em comida regional nordestina em João Pessoa. Localizado no coração de Manaíra, nosso restaurante celebra mais de 30 anos levando o autêntico sabor da Paraíba para moradores e visitantes.</p>
+                
+                <div class="about-highlight">
+                    <h3>🏆 Número 1 em Carne de Sol</h3>
+                    <p>Reconhecidos pela qualidade excepcional da nossa carne de sol, preparada com técnicas tradicionais que garantem o sabor único e a maciez que nos tornaram famosos.</p>
+                </div>
+
+                <p>Com uma estrutura completa que inclui estacionamento próprio, espaço kids para as crianças, ambiente climatizado e área ao ar livre, oferecemos a melhor experiência gastronômica em um ambiente familiar e acolhedor.</p>
+
+                <p>Nossa equipe dedicada trabalha diariamente para manter a tradição e a excelência que nos definem, servindo pratos generosos que alimentam corpo e alma.</p>
+            </div>
+
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop" alt="Pratos do Picuí Praia">
+                <div class="about-badge">
+                    <h3>30+ Anos</h3>
+                    <p>De Tradição</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="cardapio">
+        <h2 class="section-title">Nosso Cardápio</h2>
+        
+        <div class="menu-categories">
+            <button class="category-btn active">Destaques</button>
+            <button class="category-btn">Entradas</button>
+            <button class="category-btn">Pratos Principais</button>
+            <button class="category-btn">Sobremesas</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+            <!-- Destaques -->
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?q=80&w=800&auto=format&fit=crop" alt="Carne de Sol Tradicional">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Carne de Sol Tradicional</h3>
+                    <p>Nossa especialidade! Carne de sol macia e saborosa, servida com feijão caipira, arroz, macaxeira, farofa matuta, vinagrete e cebolinha.</p>
+                    <span class="menu-tag">Especialidade da Casa</span>
+                    <p class="menu-price">A partir de R$ 51,00</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop" alt="Carne de Sol com Queijo Coalho">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Carne de Sol com Queijo Coalho</h3>
+                    <p>Combinação perfeita! Carne de sol grelhada acompanhada de queijo coalho assado, vinagrete e farofa da casa.</p>
+                    <span class="menu-tag">Tradicional</span>
+                    <p class="menu-price">Consulte</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=800&auto=format&fit=crop" alt="Carne de Sol no Creme de Queijo">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Carne de Sol no Creme de Queijo</h3>
+                    <p>Carne de sol desfiada em cremoso molho de queijo, servida com vinagrete e farofa da casa. Irresistível!</p>
+                    <span class="menu-tag">Favorito dos Clientes</span>
+                    <p class="menu-price">Consulte</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="Misto Picuí">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Misto Picuí</h3>
+                    <p>Combinação de carne de sol, frango e 5 calabresas. Serve 4 pessoas. Acompanha feijão caipira, paçoca, purê de aipim, arroz, farofa matuta, vinagrete e cebolinha.</p>
+                    <span class="menu-tag">Para Compartilhar</span>
+                    <p class="menu-price">Para 4 pessoas</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format&fit=crop" alt="Combinado Picuí">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Combinado Picuí</h3>
+                    <p>Experiência completa: carne de sol, frango, picanha, calabresa e carneiro. Serve de 6 a 8 pessoas. Acompanha feijão tropeiro, farofa de soja, purê de aipim, arroz, batata frita, vinagrete e cebolinha.</p>
+                    <span class="menu-tag">Banquete</span>
+                    <p class="menu-price">6 a 8 pessoas</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?q=80&w=800&auto=format&fit=crop" alt="Maminha Grelhada">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Maminha Picuí Completa</h3>
+                    <p>Maminha grelhada ao ponto perfeito, acompanhada de feijão caipira, farofa de soja, purê de aipim, arroz, vinagrete e cebolinha.</p>
+                    <span class="menu-tag">Churrasco</span>
+                    <p class="menu-price">Consulte</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&w=800&auto=format&fit=crop" alt="Frango à Moda da Casa">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Frango à Moda da Casa</h3>
+                    <p>Frango temperado e grelhado na perfeição, servido com feijão de corda, aipim frito, pirão de leite, arroz, vinagrete e cebolinha.</p>
+                    <span class="menu-tag">Regional</span>
+                    <p class="menu-price">Consulte</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop&sat=-10" alt="Carneiro Assado">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Carneiro Assado com Molho de Hortelã</h3>
+                    <p>Carneiro assado lentamente, coberto com aromático molho de hortelã. Acompanha feijão caipira, pirão de leite, aipim cozido, arroz, vinagrete e cebolinha.</p>
+                    <span class="menu-tag">Especial</span>
+                    <p class="menu-price">Consulte</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1535140728325-a4d3707eee61?q=80&w=800&auto=format&fit=crop" alt="Espeto de Surubim">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Espeto de Surubim Completo</h3>
+                    <p>Peixe de água doce grelhado, servido com pirão de surubim, feijão de corda, arroz, batata frita, vinagrete e cebolinha.</p>
+                    <span class="menu-tag">Frutos do Mar</span>
+                    <p class="menu-price">Consulte</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1601312540242-3c8c271e9db0?q=80&w=800&auto=format&fit=crop" alt="Dadinho de Tapioca">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Dadinho de Tapioca</h3>
+                    <p>Porção crocante de tapioca frita, perfeita para começar a refeição.</p>
+                    <span class="menu-tag">Entrada</span>
+                    <p class="menu-price">A partir de R$ 32,90</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1618164436241-4473940d1f5c?q=80&w=800&auto=format&fit=crop" alt="Queijo Coalho">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Queijo Coalho com Melaço</h3>
+                    <p>Queijo coalho grelhado, finalizado com melaço de cana. Combinação doce e salgada irresistível.</p>
+                    <span class="menu-tag">Entrada</span>
+                    <p class="menu-price">A partir de R$ 38,90</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-image">
+                    <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=800&auto=format&fit=crop" alt="Escondidinho">
+                </div>
+                <div class="menu-item-content">
+                    <h3>Escondidinho</h3>
+                    <p>Clássico escondidinho de carne de sol com purê de aipim gratinado. Reconfortante e delicioso.</p>
+                    <span class="menu-tag">Entrada</span>
+                    <p class="menu-price">Consulte</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 8px;">
+            <p style="font-size: 1.1rem; color: var(--earth); line-height: 1.8;">
+                <strong>Horário de Funcionamento:</strong><br>
+                Aberto diariamente das 11:00 às 23:00<br><br>
+                📱 Faça seu pedido pelo <a href="https://www.ifood.com.br/delivery/joao-pessoa-pb/picui-praia-jardim-oceania/6cc3f673-51e9-41a2-83d5-a6b0d9dc2a33" style="color: var(--primary); font-weight: 700;">iFood</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="localizacao">
+        <h2 class="section-title">Localização</h2>
+        <div class="location-content">
+            <div class="location-info">
+                <div class="info-item">
+                    <h3>📍 Endereço</h3>
+                    <p>R. Ivanice Martins da Câmara, 71<br>
+                    Lot. Morada Nobre - Manaíra<br>
+                    João Pessoa - PB, 58037-125</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>🕐 Horário de Funcionamento</h3>
+                    <p><strong>Segunda a Domingo:</strong><br>
+                    11:00 - 23:00<br><br>
+                    Almoço e Jantar<br>
+                    Aberto até tarde</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>✨ Diferenciais</h3>
+                    <p>
+                        • Estacionamento próprio<br>
+                        • Espaço kids<br>
+                        • Ambiente climatizado<br>
+                        • Área ao ar livre<br>
+                        • Wi-Fi gratuito<br>
+                        • Acessível para cadeirantes<br>
+                        • Aceita cartões de crédito
+                    </p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <h3>📍 Estamos em Manaíra</h3>
+                    <p style="color: var(--earth); margin-top: 1rem; line-height: 1.6;">
+                        Localização privilegiada no bairro de Manaíra,<br>
+                        uma das melhores áreas de João Pessoa.<br><br>
+                        Próximo à orla e principais pontos turísticos.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=R.+Ivanice+Martins+da+Câmara,+71,+João+Pessoa" 
+                       target="_blank" 
+                       class="cta-button" 
+                       style="display: inline-block; margin-top: 2rem; font-size: 0.9rem; padding: 1rem 2rem;">
+                        <span>ABRIR NO GOOGLE MAPS</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="galeria">
+        <h2 class="section-title">Ambiente</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" alt="Ambiente interno">
+                <div class="gallery-caption">
+                    <h3>Ambiente Acolhedor</h3>
+                    <p>Espaço moderno e confortável</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop" alt="Pratos deliciosos">
+                <div class="gallery-caption">
+                    <h3>Culinária Autêntica</h3>
+                    <p>Sabores da Paraíba</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop" alt="Área externa">
+                <div class="gallery-caption">
+                    <h3>Área ao Ar Livre</h3>
+                    <p>Perfeita para relaxar</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop" alt="Experiência gastronômica">
+                <div class="gallery-caption">
+                    <h3>Experiência Completa</h3>
+                    <p>Para toda a família</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="Churrasco tradicional">
+                <div class="gallery-caption">
+                    <h3>Carnes Premium</h3>
+                    <p>Qualidade garantida</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop" alt="Celebrações">
+                <div class="gallery-caption">
+                    <h3>Momentos Especiais</h3>
+                    <p>Celebre conosco</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="font-size: 1.2rem; opacity: 0.9;">
+                Siga nosso Instagram <a href="https://www.instagram.com/picuipraia/" target="_blank" style="color: var(--secondary); font-weight: 700;">@picuipraia</a> para ver mais fotos!
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contato">
+        <h2 class="section-title">Entre em Contato</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Telefone</h3>
+                    <a href="tel:+5583999833648">(83) 99983-3648</a><br>
+                    <a href="tel:+558332463377">(83) 3246-3377</a>
+                </div>
+
+                <div class="contact-item">
+                    <h3>📧 E-mail</h3>
+                    <a href="mailto:falecom@picuipraia.com.br">falecom@picuipraia.com.br</a>
+                </div>
+
+                <div class="contact-item">
+                    <h3>🌐 Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/picuipraia/" target="_blank" class="social-btn" title="Instagram">📷</a>
+                        <a href="" target="_blank" class="social-btn" title="Facebook">👍</a>
+                        <a href="https://wa.link/l5svw2" target="_blank" class="social-btn" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <h3>🍔 Delivery</h3>
+                    <a href="https://www.ifood.com.br/delivery/joao-pessoa-pb/picui-praia-jardim-oceania/6cc3f673-51e9-41a2-83d5-a6b0d9dc2a33" target="_blank">Peça pelo iFood</a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary); margin-bottom: 2rem;">Envie uma Mensagem</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ENVIAR MENSAGEM</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">PICUÍ PRAIA</div>
+            <div class="footer-text">
+                <p>Tradição, qualidade e sabor há mais de 30 anos.<br>
+                O melhor da culinária nordestina em João Pessoa.</p>
+                <p style="margin-top: 1.5rem;">
+                    R. Ivanice Martins da Câmara, 71 - Manaíra, João Pessoa - PB<br>
+                    (83) 99983-3648 | (83) 3246-3377<br>
+                    falecom@picuipraia.com.br
+                </p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Picuí Praia Bar e Restaurante. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.pageYOffset;
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.backgroundPosition = `center ${scrolled * 0.5}px`;
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Obrigado pela mensagem! Entraremos em contato em breve.');
+            contactForm.reset();
+        });
+
+        // Smooth scroll for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Menu category filtering (simplified version)
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Add scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.menu-item, .stat-card, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
